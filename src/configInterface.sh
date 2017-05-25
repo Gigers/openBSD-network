@@ -1,7 +1,6 @@
 #!/bin/sh
 
-static(){
-
+quest(){
 
 	echo "Insira a interface: "
 	read eth
@@ -9,12 +8,25 @@ static(){
 	read ip
 	echo "Insira a mascara da rede: "
 	read mask
-	echo "Insira o broadcast: "
+	echo "Insira o endereÃo broadcast: "
 	read bc
 
+}
+
+
+dhcp(){
+
+	echo "Insira a interface: "
+	read eth
+	
+	echo "dhcp" > /etc/hostname.$eth
+
+}
+
+static(){
+
+	quest
 	echo "inet $ip $mask $bc" > /etc/hostname.$eth
-
-
 }
 
 
@@ -31,11 +43,17 @@ main(){
 			static
 			;;
 
+		2)
+			dhcp
+			;;
+
 		*)	
 			echo "ERRO!"
 			esac
 
 }
+
+### Final ###
 
 TOOR=$(id -u)
 
