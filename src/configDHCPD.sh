@@ -29,11 +29,11 @@ configServer(){
 	read end
 
 	echo "# $name" >> teste
-	echo "subnet $subnet netmask $mask {" >> teste
-	echo "option domain-name-servers $dns;" >> teste
-	echo "option routers $router;" >> teste
-	echo "range $start $end;" >> teste
-	echo "}" >> teste
+	echo "subnet $subnet netmask $mask {" >> /etc/dhcpd.conf
+	echo "option domain-name-servers $dns;" >> /etc/dhcpd.conf
+	echo "option routers $router;" >> /etc/dhcpd.conf
+	echo "range $start $end;" >> /etc/dhcpd.conf
+	echo "}" >> /etc/dhcpd.conf
 
 }
 
