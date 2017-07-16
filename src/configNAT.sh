@@ -15,3 +15,9 @@ echo "Exemplo: 192.168.0.0/24"
 read PrivNet
 
 echo "match out log on $ExtIf from $PrivNet to any received-on $IntIf tag EGRESS nat-to ($ExtIf:0)" >> /etc/pf.conf
+
+#Reiniciando interfaces
+sh /etc/netstart
+
+#Reiniciando DHCP
+/etc/rc.d/dhcpd restart

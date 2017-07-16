@@ -35,8 +35,9 @@ configServer(){
 	echo "range $start $end;" >> /etc/dhcpd.conf
 	echo "}" >> /etc/dhcpd.conf
 
+	#Reiniciando servi√o
+	/etc/rc.d/dhcpd restart
 }
-
 
 echo "Configurando servidor DHCP"
 

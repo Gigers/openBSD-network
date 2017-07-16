@@ -21,12 +21,15 @@ dhcp(){
 	
 	echo "dhcp" > /etc/hostname.$eth
 
+	sh /etc/netstart
 }
 
 static(){
 
 	quest
 	echo "inet $ip $mask $bc" > /etc/hostname.$eth
+	
+	sh /etc/netstart
 }
 
 
