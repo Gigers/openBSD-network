@@ -21,3 +21,6 @@ sh /etc/netstart
 
 #Reiniciando DHCP
 /etc/rc.d/dhcpd restart
+
+#Reinicia PF
+pfctl -f /etc/pf.conf
