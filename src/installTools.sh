@@ -22,6 +22,7 @@ echo "Instalacao de ferramentas"
 echo "Escolha: "
 echo "1-) Vim"
 echo "2-) XCFE4"
+echo "3-) wget"
 
 read choose
 
@@ -34,6 +35,11 @@ case $choose in
 	2)
 		echo "Instalando a interface grafica"
 		installXFCE
+		;;
+
+	3)
+		echo "Instalando o wget"
+		pkg_add wget
 		;;
 
 	*)	
